@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+}
+
+#rock-paper-scissor {
+    background-color: #9c835f;
+    height: 100vh;
+    width: 100vw;
+}
+.tittle h1 {
+    color: #f9b23d;
+}
+.play h1 {
+    color: #bd0000;
+    font-size: 144px;
+    font-weight: bold;
+    letter-spacing: 14px;
+}
