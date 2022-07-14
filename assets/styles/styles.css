@@ -43,13 +43,13 @@ body {
     width: 130px;
 }
 @media (max-width: 1400px) {
-    .container {
+    /* .container {
         position: relative;
         top: 0;
         left: 0;
         -ms-transform: translate(0%, 0%);
         transform: translate(0%, 0%);
-    }
+    } */
     .img-container {
         width: 180px;
         height: 160px;
@@ -61,8 +61,8 @@ body {
     }
 }
 @media (max-width: 1200px) {
-    #rock-paper-scissor {
-        height: 100%;
+    /* #rock-paper-scissor {
+        height: 100vh;
     }
     .container {
         position: relative;
@@ -70,7 +70,7 @@ body {
         left: 0;
         -ms-transform: translate(0%, 0%);
         transform: translate(0%, 0%);
-    }
+    } */
 }
 @media (max-width: 760px) {
     #rock-paper-scissor {
