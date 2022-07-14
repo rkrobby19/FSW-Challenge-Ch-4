@@ -43,6 +43,7 @@ body {
     width: 130px;
 }
 @media (max-width: 1400px) {
+<<<<<<< Updated upstream
     .container {
         position: relative;
         top: 0;
@@ -50,11 +51,11 @@ body {
         -ms-transform: translate(0%, 0%);
         transform: translate(0%, 0%);
     }
+=======
+>>>>>>> Stashed changes
     .img-container {
         width: 180px;
         height: 160px;
-    }
-    .img-container img {
     }
     .img-container img {
         width: 80px;
@@ -63,6 +64,8 @@ body {
 @media (max-width: 1200px) {
     #rock-paper-scissor {
         height: 100%;
+<<<<<<< Updated upstream
+=======
     }
     .container {
         position: relative;
@@ -72,7 +75,32 @@ body {
         transform: translate(0%, 0%);
     }
 }
-@media (max-width: 760px) {
+@media (max-width: 920px) {
+    #rock-paper-scissor {
+        height: 100vh;
+    }
+    .container {
+        position: relative;
+        top: 0;
+        left: 0;
+        -ms-transform: translate(0%, 0%);
+        transform: translate(0%, 50%);
+    }
+}
+@media (max-width: 768px) {
+    #rock-paper-scissor {
+        height: 100vh;
+>>>>>>> Stashed changes
+    }
+    .container {
+        position: relative;
+        top: 0;
+        left: 0;
+        -ms-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+    }
+}
+@media (max-width: 576px) {
     #rock-paper-scissor {
         height: 100%;
     }
