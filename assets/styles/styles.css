@@ -25,17 +25,26 @@ body {
 .tittle h1 {
     color: #f9b23d;
 }
-.play h1 {
+.vs {
     color: #bd0000;
     font-size: 140px;
     font-weight: bold;
     letter-spacing: 14px;
+}
+.game-result {
+    color: white;
+    font-size: 38px;
+    letter-spacing: 4px;
 }
 .img-container {
     width: 230px;
     height: 210px;
 }
 .player .img-container:hover {
+    background-color: lightblue;
+    border-radius: 10px;
+}
+.active {
     background-color: lightblue;
     border-radius: 10px;
 }
