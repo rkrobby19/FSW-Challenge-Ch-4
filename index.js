@@ -7,15 +7,49 @@ let getComSelection = () => {
 };
 let gameRules = (playerSelection, comSelection) => {
     // set the game rules
-    if (playerSelection == comSelection) return "seri";
+    if (playerSelection == comSelection) return "draw";
     if (playerSelection == "batu")
-        return comSelection == "gunting" ? "player win" : "com win";
+        return comSelection == "gunting" ? "player 1 win" : "com win";
     if (playerSelection == "kertas")
-        return comSelection == "batu" ? "player win" : "com win";
+        return comSelection == "batu" ? "player 1 win" : "com win";
     if (playerSelection == "gunting")
-        return comSelection == "kertas" ? "player win" : "com win";
+        return comSelection == "kertas" ? "player 1 win" : "com win";
 };
 
+// TODO create a limit click and refresh button
+let playerSection = document.querySelectorAll(".player div");
+playerSection.forEach((select) => {
+    select.addEventListener("click", () => {
+        const comSelection = getComSelection();
+        const playerSelection = select.id;
+        const result = gameRules(playerSelection, comSelection);
+        alert(`yes, ${playerSelection} got clicked`);
+
+        // * set player active
+        let playerSelect = document.querySelector("#" + playerSelection);
+
+        playerSelect.classList.add("active");
+        // * set com select active
+        let comSelect = document.querySelector("#com-" + comSelection);
+
+        comSelect.classList.add("active");
+        // * set game result
+        // TODO set the text layout
+        let gameResultArea = document.querySelector("#result");
+        gameResultArea.classList.add(
+            "game-result-active",
+            "d-flex",
+            "align-items-center",
+            "justify-content-center"
+        );
+
+        let gameResult = document.querySelector(".hasil");
+        gameResult.innerHTML = result;
+        gameResult.style.cssText = "text-transform: uppercase;";
+        gameResult.classList.replace("vs", "game-result");
+    });
+});
+/*
 let playerSelectionBatu = document.querySelector("#batu");
 playerSelectionBatu.addEventListener("click", () => {
     alert("oke");
@@ -43,3 +77,4 @@ playerSelectionBatu.addEventListener("click", () => {
         textResult.classList.replace("game-result", "vs");
     });
 });
+*/

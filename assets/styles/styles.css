@@ -36,6 +36,13 @@ body {
     font-size: 38px;
     letter-spacing: 4px;
 }
+.game-result-active {
+    background-color: #4c9654;
+    padding: 35px;
+    border-radius: 15px;
+    width: 280px;
+    height: 170px;
+}
 .img-container {
     width: 230px;
     height: 210px;
