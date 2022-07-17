@@ -7,13 +7,17 @@
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
-    background-color: #9c835f;
+    /* background-color: #9c835f; */
 }
 
+/* * section */
 #rock-paper-scissor {
     background-color: #9c835f;
     height: 100vh;
     width: 100vw;
+}
+.tittle h1 {
+    color: #f9b23d;
 }
 .container {
     position: absolute;
@@ -22,37 +26,58 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-.tittle h1 {
-    color: #f9b23d;
+
+/* TODO: fixing the left padding for li item */
+/* * image list */
+ul li {
+    list-style: none;
+    width: 230px;
+    height: 210px;
 }
-.play h1 {
+ul li:hover {
+    background-color: lightblue;
+    border-radius: 10px;
+}
+ul li img {
+    width: 130px;
+}
+
+/* * text-area */
+.vs {
     color: #bd0000;
     font-size: 140px;
     font-weight: bold;
     letter-spacing: 14px;
 }
-.img-container {
-    width: 230px;
-    height: 210px;
-}
-.player .img-container:hover {
+
+/* ! js styling */
+/* * image list */
+.active {
     background-color: lightblue;
     border-radius: 10px;
 }
-.img-container img {
-    width: 130px;
+/* * text-area */
+.game-result {
+    color: white;
+    font-size: 38px;
+    letter-spacing: 4px;
+    padding: 35px;
+    border-radius: 15px;
+    width: 280px;
+    height: 170px;
 }
+.game-result-win {
+    background-color: #4c9654;
+}
+.game-result-draw {
+    background: #035b0c;
+}
+.rotate {
+    transform: rotate(-28deg);
+}
+
+/* * media query */
 @media (max-width: 1400px) {
-<<<<<<< Updated upstream
-    .container {
-        position: relative;
-        top: 0;
-        left: 0;
-        -ms-transform: translate(0%, 0%);
-        transform: translate(0%, 0%);
-    }
-=======
->>>>>>> Stashed changes
     .img-container {
         width: 180px;
         height: 160px;
@@ -64,8 +89,6 @@ body {
 @media (max-width: 1200px) {
     #rock-paper-scissor {
         height: 100%;
-<<<<<<< Updated upstream
-=======
     }
     .container {
         position: relative;
@@ -90,7 +113,6 @@ body {
 @media (max-width: 768px) {
     #rock-paper-scissor {
         height: 100vh;
->>>>>>> Stashed changes
     }
     .container {
         position: relative;
