@@ -16,65 +16,84 @@ let gameRules = (playerSelection, comSelection) => {
         return comSelection == "kertas" ? "player 1 win" : "com win";
 };
 
-// TODO create a limit click and refresh button
-let playerSection = document.querySelectorAll(".player div");
+// TODO: little adjusment on refresh button looping logic for counter
+let playerSection = document.querySelectorAll(".player-area ul li");
+let counter = 1;
+
 playerSection.forEach((select) => {
     select.addEventListener("click", () => {
-        const comSelection = getComSelection();
-        const playerSelection = select.id;
-        const result = gameRules(playerSelection, comSelection);
-        alert(`yes, ${playerSelection} got clicked`);
+        if (counter % 2 !== 0) {
+            const comSelection = getComSelection();
+            const playerSelection = select.id;
+            const result = gameRules(playerSelection, comSelection);
+            alert(`yes, ${playerSelection} got clicked`);
 
-        // * set player active
-        let playerSelect = document.querySelector("#" + playerSelection);
+            // * set player active
+            let playerSelect = document.querySelector("#" + playerSelection);
+            playerSelect.classList.add("active");
 
-        playerSelect.classList.add("active");
-        // * set com select active
-        let comSelect = document.querySelector("#com-" + comSelection);
+            // TODO: create looping background for chosing animation
+            // * set com select active
+            let comSelect = document.querySelector("#com-" + comSelection);
+            comSelect.classList.add("active");
 
-        comSelect.classList.add("active");
-        // * set game result
-        // TODO set the text layout
-        let gameResultArea = document.querySelector("#result");
-        gameResultArea.classList.add(
-            "game-result-active",
-            "d-flex",
-            "align-items-center",
-            "justify-content-center"
-        );
+            // * set game result
+            let gameResultArea = document.querySelector("#result");
+            gameResultArea.classList.add(
+                "d-flex",
+                "align-items-center",
+                "justify-content-center",
+                "rotate"
+            );
+            let gameResult = document.querySelector(".hasil");
+            gameResult.innerHTML = result;
+            gameResult.classList.add("game-result");
+            if (result == "com win" || result == "player 1 win") {
+                gameResult.classList.add("game-result-win");
+            } else {
+                gameResult.classList.add("game-result-draw");
+            }
+            gameResult.style.cssText = "text-transform: uppercase;";
+            gameResult.classList.replace("vs", "game-result");
 
-        let gameResult = document.querySelector(".hasil");
-        gameResult.innerHTML = result;
-        gameResult.style.cssText = "text-transform: uppercase;";
-        gameResult.classList.replace("vs", "game-result");
+            // ! click counter
+            counter = counter + 1;
+            console.log(counter);
+
+            // * reset button
+            let reset = document.getElementById("reset");
+            reset.addEventListener("click", () => {
+                // * set player active
+
+                playerSelect.classList.remove("active");
+
+                // * set com select active
+
+                comSelect.classList.remove("active");
+
+                // * set game result
+
+                gameResultArea.classList.remove(
+                    "d-flex",
+                    "align-items-center",
+                    "justify-content-center",
+                    "rotate"
+                );
+
+                gameResult.innerHTML = "vs";
+
+                if (result == "com win" || result == "player 1 win") {
+                    gameResult.classList.remove("game-result-win");
+                } else {
+                    gameResult.classList.remove("game-result-draw");
+                }
+                gameResult.style.cssText = "text-transform: uppercase;";
+                gameResult.classList.replace("game-result", "vs");
+
+                // ! counter
+                counter = 1;
+                console.log(counter);
+            });
+        }
     });
 });
-/*
-let playerSelectionBatu = document.querySelector("#batu");
-playerSelectionBatu.addEventListener("click", () => {
-    alert("oke");
-    const comSelection = getComSelection();
-    const playerSelection = playerSelectionBatu.id;
-    const result = gameRules(playerSelection, comSelection);
-    // select player active
-    playerSelectionBatu.classList.add("active");
-    // select com active
-    let comSelect = document.querySelector("#com-" + comSelection);
-    comSelect.classList.add("active");
-    // select result
-    let gameResult = document.querySelector("#result");
-    gameResult.classList.add("active");
-    let textResult = document.querySelector(".hasil");
-    textResult.innerHTML = result;
-    textResult.classList.replace("vs", "game-result");
-    // reset button
-    let reset = document.querySelector("#reset");
-    reset.addEventListener("click", () => {
-        playerSelectionBatu.classList.remove("active");
-        comSelect.classList.remove("active");
-        gameResult.classList.remove("active");
-        textResult.innerHTML = "vs";
-        textResult.classList.replace("game-result", "vs");
-    });
-});
-*/
