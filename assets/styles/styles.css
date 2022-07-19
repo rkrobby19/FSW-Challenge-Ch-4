@@ -15,7 +15,14 @@ body {
     height: 100vh;
     width: 100vw;
 }
-.tittle h1 {
+nav {
+    padding: 1rem;
+}
+h1.back {
+    color: #724c21;
+    font-size: 72px;
+}
+h1.tittle {
     color: #f9b23d;
 }
 .container {
@@ -28,16 +35,17 @@ body {
 
 /* TODO: fixing the left padding for li item */
 /* * image list */
-ul li {
-    list-style: none;
+button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
     width: 230px;
     height: 210px;
 }
-ul li:hover {
+button:hover {
     background-color: lightblue;
-    border-radius: 10px;
+    border-radius: 30px;
 }
-ul li img {
+button img {
     width: 130px;
 }
 

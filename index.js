@@ -1,3 +1,4 @@
+// TODO: create OOP
 let getComSelection = () => {
     const randomNumber = Math.random(); // get random number for selection
     // assign the number
@@ -17,7 +18,7 @@ let gameRules = (playerSelection, comSelection) => {
 };
 
 // TODO: little adjusment on refresh button looping logic for counter
-let playerSection = document.querySelectorAll(".player-area ul li");
+let playerSection = document.querySelectorAll(".player-area button");
 let counter = 1;
 
 playerSection.forEach((select) => {
@@ -32,7 +33,7 @@ playerSection.forEach((select) => {
             let playerSelect = document.querySelector("#" + playerSelection);
             playerSelect.classList.add("active");
 
-            // TODO: create looping background for chosing animation
+            // TODO: create looping background for chosing animation if possible
             // * set com select active
             let comSelect = document.querySelector("#com-" + comSelection);
             comSelect.classList.add("active");

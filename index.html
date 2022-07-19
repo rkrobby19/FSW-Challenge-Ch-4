@@ -16,9 +16,11 @@
     </head>
     <body>
         <section id="rock-paper-scissor" class="rock-paper-scissorr">
-            <!-- TODO: add a left button for go back action -->
-            <nav class="tittle d-flex align-items-center">
-                <div class="flex-shrink-0">
+            <nav class="d-flex align-items-center">
+                <div class="flex-shrink-0 ms-3">
+                    <h1 class="back text-uppercase">&lt;</h1>
+                </div>
+                <div class="flex-shrink-0 ms-3">
                     <img
                         src="./assets/images/logo.png"
                         style="width: 77px"
@@ -26,7 +28,7 @@
                     />
                 </div>
                 <div class="flex-grow-1 ms-3">
-                    <h1 class="text-uppercase">Rock Paper Scissor</h1>
+                    <h1 class="tittle text-uppercase">Rock Paper Scissor</h1>
                 </div>
             </nav>
 
@@ -37,27 +39,24 @@
                         class="player-area col-8 col-md-3 d-flex flex-column align-items-center"
                     >
                         <h1 class="text-uppercase">Player 1</h1>
-                        <!-- ? better using li or button -->
-                        <ul>
-                            <li
-                                id="batu"
-                                class="d-flex align-items-center justify-content-center"
-                            >
-                                <img src="./assets/images/batu.png" alt="" />
-                            </li>
-                            <li
-                                id="kertas"
-                                class="d-flex align-items-center justify-content-center"
-                            >
-                                <img src="./assets/images/kertas.png" alt="" />
-                            </li>
-                            <li
-                                id="gunting"
-                                class="d-flex align-items-center justify-content-center"
-                            >
-                                <img src="./assets/images/gunting.png" alt="" />
-                            </li>
-                        </ul>
+                        <button
+                            id="batu"
+                            class="d-flex align-items-center justify-content-center"
+                        >
+                            <img src="./assets/images/batu.png" alt="" />
+                        </button>
+                        <button
+                            id="kertas"
+                            class="d-flex align-items-center justify-content-center"
+                        >
+                            <img src="./assets/images/kertas.png" alt="" />
+                        </button>
+                        <button
+                            id="gunting"
+                            class="d-flex align-items-center justify-content-center"
+                        >
+                            <img src="./assets/images/gunting.png" alt="" />
+                        </button>
                     </div>
                     <div
                         id="result"
@@ -69,26 +68,25 @@
                         class="com-area col-8 col-md-3 d-flex flex-column align-items-center"
                     >
                         <h1 class="text-uppercase">Com</h1>
-                        <ul>
-                            <li
+                            <button
                                 id="com-batu"
                                 class="d-flex align-items-center justify-content-center"
                             >
                                 <img src="./assets/images/batu.png" alt="" />
-                            </li>
-                            <li
+                            </button>
+                            <button
                                 id="com-kertas"
                                 class="d-flex align-items-center justify-content-center"
                             >
                                 <img src="./assets/images/kertas.png" alt="" />
-                            </li>
-                            <li
+                            </butt>
+                            <button
                                 id="com-gunting"
                                 class="d-flex align-items-center justify-content-center"
                             >
                                 <img src="./assets/images/gunting.png" alt="" />
-                            </li>
-                        </ul>
+                            </button>
+                        
                     </div>
                 </div>
                 <div class="row text-center">
