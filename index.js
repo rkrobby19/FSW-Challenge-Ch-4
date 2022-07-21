@@ -19,8 +19,18 @@ class comp extends player {
 }
 class game {
     constructor(player, com) {
+        // ? what is this mean
         this.player = player;
         this.com = com;
+        // ? why null
+        this.p = player.choice;
+        this.c = com.choice;
+
+        // * DOM selector
+        this.playerSelection = document.querySelectorAll(".player-area button");
+        this.comSection = document.querySelectorAll(".com-area button");
+        this.textBox = document.querySelector("#result");
+        this.textArea = document.querySelector(".hasil");
     }
 
     gameResult(player, com) {
@@ -31,6 +41,19 @@ class game {
             return com.choice == "batu" ? "player 1 win" : "com win";
         if (player.choice == "gunting")
             return com.choice == "kertas" ? "player 1 win" : "com win";
+    }
+
+    setActive(player, com) {
+        let p = document.getElementById(player.choice);
+        let c = document.getElementById("com-" + com.choice);
+        p.classList.add("active");
+        c.classList.add("active");
+    }
+    setRefresh(player, com) {
+        let p = document.getElementById(player.choice);
+        let c = document.getElementById("com-" + com.choice);
+        p.classList.remove("active");
+        c.classList.remove("active");
     }
 }
 
@@ -56,6 +79,7 @@ playerSelect.forEach((select) => {
             console.log(comSelect);
             // * enter the game play
             let result = play.gameResult(player1, com);
+            play.setActive(player1, com);
             console.log(result);
             // ! counter check for limiting click
             console.log(counter);
@@ -64,7 +88,8 @@ playerSelect.forEach((select) => {
             // ! for alert and limiting click
             alert("please refresh");
             console.log(counter);
-            counter--;
+            // play.setRefresh(player1, com);
+            //counter--;
         }
     });
 });
