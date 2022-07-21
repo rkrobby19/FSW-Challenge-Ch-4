@@ -33,7 +33,6 @@ h1.tittle {
     transform: translate(-50%, -50%);
 }
 
-/* TODO: fixing the left padding for li item */
 /* * image list */
 button {
     border: none;
@@ -61,7 +60,7 @@ button img {
 /* * image list */
 .active {
     background-color: lightblue;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 /* * text-area */
 .game-result {
