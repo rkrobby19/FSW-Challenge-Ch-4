@@ -1,3 +1,4 @@
+// TODO: create animation when com think
 // * create object
 class player {
     constructor() {
@@ -55,13 +56,17 @@ class game {
         let c = document.getElementById("com-" + com.choice);
         p.classList.add("active");
         c.classList.add("active");
-        this.textBox.classList.add("rotate");
+        this.textBox.classList.add(
+            "rotate",
+            "d-flex",
+            "align-items-center",
+            "justify-content-center"
+        );
         this.textArea.innerHTML = this.result;
+        this.textArea.classList.replace("vs", "game-result");
         if (this.result == "draw") {
-            this.textArea.classList.replace("vs", "game-result");
             this.textBox.classList.add("game-result-draw");
         } else {
-            this.textArea.classList.replace("vs", "game-result");
             this.textBox.classList.add("game-result-win");
         }
     }
@@ -70,13 +75,17 @@ class game {
         let c = document.getElementById("com-" + com.choice);
         p.classList.remove("active");
         c.classList.remove("active");
-        this.textBox.classList.remove("rotate");
+        this.textBox.classList.remove(
+            "rotate",
+            "d-flex",
+            "align-items-center",
+            "justify-content-center"
+        );
         this.textArea.innerHTML = "vs";
+        this.textArea.classList.replace("game-result", "vs");
         if (this.result == "draw") {
-            this.textArea.classList.replace("game-result", "vs");
             this.textBox.classList.remove("game-result-draw");
         } else {
-            this.textArea.classList.replace("game-result", "vs");
             this.textBox.classList.remove("game-result-win");
         }
     }
