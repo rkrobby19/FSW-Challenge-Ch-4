@@ -1,4 +1,3 @@
-// TODO: create animation when com think
 // * create object
 class player {
     constructor() {
@@ -24,12 +23,9 @@ class game {
         this.player = player;
         this.com = com;
         this.result = null;
-        // ? why null
-        this.p = player.choice;
-        this.c = com.choice;
 
         // * DOM selector
-        this.playerSelection = document.querySelectorAll(".player-area button");
+        this.playerSection = document.querySelectorAll(".player-area button");
         this.comSection = document.querySelectorAll(".com-area button");
         this.textBox = document.querySelector("#result");
         this.textArea = document.querySelector(".hasil");
@@ -70,6 +66,7 @@ class game {
             this.textBox.classList.add("game-result-win");
         }
     }
+
     setRefresh(player, com) {
         let p = document.getElementById(player.choice);
         let c = document.getElementById("com-" + com.choice);
@@ -98,7 +95,7 @@ let play = new game(player1, com);
 
 // * get the player selection
 let counter = 0;
-let playerSelect = document.querySelectorAll(".player-area button");
+let playerSelect = play.playerSection;
 playerSelect.forEach((select) => {
     select.addEventListener("click", () => {
         if (counter == 0) {
@@ -106,7 +103,6 @@ playerSelect.forEach((select) => {
             let playerSelect = select.id;
             player1.getPlayerChoice(playerSelect);
             console.log(`Player 1 : ${playerSelect}`);
-            alert(`you click ${playerSelect}`);
             // * com choice
             let comSelect = com.getCompChoice();
             console.log(`Com : ${comSelect}`);
@@ -114,16 +110,21 @@ playerSelect.forEach((select) => {
             let result = play.gameResult(player1, com);
             console.log(`Result : ${result}`);
             play.setActive(player1, com);
-            // ! counter check for limiting click
             counter++;
         } else {
-            // ! for alert limit click
             alert("Please click the refresh button !");
         }
     });
 });
 
-// * refresh button
+let comSelect = play.comSection;
+comSelect.forEach((select) => {
+    select.addEventListener("click", () => {
+        alert("You click the wrong area !");
+    });
+});
+
+// * refresh buttonss
 let refresh = document.getElementById("refresh");
 refresh.addEventListener("click", () => {
     play.setRefresh(player1, com);
