@@ -13,6 +13,7 @@ body {
 /* * section */
 #rock-paper-scissor {
     background-color: #9c835f;
+    height: 100vh;
 }
 nav {
     padding: 1rem;
@@ -86,6 +87,9 @@ div.text-area {
 
 /* * media query */
 @media (max-width: 1400px) {
+    #rock-paper-scissor {
+        height: 100%;
+    }
     .img-container {
         width: 180px;
         height: 160px;
